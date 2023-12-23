@@ -4,8 +4,8 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'Jan 29, 2020',
-  name: 'Darlene'
+  birthdate: 'Dec 29, 2023',
+  name: 'GLENDA'
 };
 
 function hideEverything() {
@@ -46,15 +46,15 @@ x = setInterval(function() {
     h = (c.height = window.innerHeight),
     ctx = c.getContext('2d'),
     hw = w / 2, // half-width
-    hh = h / 2,
+    hh = h / 4,
     opts = {
-      strings: ['HAPPY', 'BIRTHDAY!', config.name],
-      charSize: 30,
-      charSpacing: 35,
+      strings: ['HAPPY', 'BIRTHDAY!', config.name, "Be yourself,", "don't be","anyone else"],
+      charSize: 24,
+      charSpacing: 24,
       lineHeight: 40,
 
       cx: w / 2,
-      cy: h / 2,
+      cy: h / 4,
 
       fireworkPrevPoints: 10,
       fireworkBaseLineWidth: 5,
@@ -406,7 +406,7 @@ x = setInterval(function() {
   function anim() {
     window.requestAnimationFrame(anim);
 
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, w, h);
 
     ctx.translate(hw, hh);
@@ -464,6 +464,7 @@ x = setInterval(function() {
     function init() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
+      box.addEventListener('click', showflower, false);
     }
 
     function stepClass(step) {
@@ -489,6 +490,13 @@ x = setInterval(function() {
     function showfireworks() {
       canvasC.style.display = 'initial';
       setTimeout(anim, 1500);
+    }
+
+    function showflower() {
+      const c = setTimeout(() => {
+        document.getElementsByClassName("not-loaded")[0].classList.remove("not-loaded");
+        clearTimeout(c);
+      }, 1000);
     }
 
     init();
