@@ -460,12 +460,21 @@ x = setInterval(function() {
     let box = merrywrap.getElementsByClassName('giftbox')[0];
     let step = 1;
     let stepMinutes = [2000, 2000, 1000, 1000];
+    let heartbuton = document.getElementById("heart-button");
+    let audio = document.getElementById("hpbd-song");
+    let flower = document.getElementsByClassName("not-loaded")[0];
+    let textElement = document.getElementById('animated-text');
+    let textToWrite = 'Chúc mừng sinh nhật :>. Chúc bạn sang tuổi mới luôn, xinh đẹp, vui vẻ, hạnh phúc, tràn đầy năng lượng, tích cực, may mắn và sớm tìm được, nửa còn lại nhé :).';
 
     function init() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
       box.addEventListener('click', showflower, false);
       box.addEventListener('click', playaudiohpbd, false);
+      box.addEventListener('click', showheartbutton, false);
+
+      heartbuton.addEventListener('click', showcongratulation, false);
+       
     }
 
     function stepClass(step) {
@@ -495,14 +504,50 @@ x = setInterval(function() {
 
     function showflower() {
       const c = setTimeout(() => {
-        document.getElementsByClassName("not-loaded")[0].classList.remove("not-loaded");
+        flower.classList.remove("not-loaded");
         clearTimeout(c);
       }, 1000);
     }
 
     function playaudiohpbd() {
-      const audio = document.getElementById("hpbd-song");
       audio.play();
+    }
+
+    function showheartbutton() {
+      const h = setTimeout(() => {
+        heartbuton.style.display = "initial";
+        clearTimeout(h);
+      }, 24000);
+    }
+
+    function showcongratulation() {
+      audio.pause();
+      flower.style.display= "none";
+      canvasC.style.display = 'none';
+      heartbuton.style.display = 'none';
+      textElement.style.display= 'inline-block';
+
+      function typeWriter(text, i, callback) {
+        if (i < text.length) {
+          if (text.charAt(i) === '.' || text.charAt(i) === ',')
+          {
+            textElement.innerHTML += '</br>';
+          } else {
+            textElement.innerHTML += text.charAt(i);
+          }
+          i++;
+          setTimeout(function () {
+            typeWriter(text, i, callback);
+          }, 50);
+        } else {
+          setTimeout(callback, 1000);
+        }
+      }
+    
+      typeWriter(textToWrite, 0, function () {
+        // Additional actions after the text is fully typed
+        console.log('Text Typed!');
+      });
     }
 
     init();
