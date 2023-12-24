@@ -3,6 +3,8 @@ const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
+document.getElementById("hpbd-song").play();
+
 const config = {
   birthdate: 'Dec 23, 2023',
   name: 'GLENDA'
@@ -461,7 +463,6 @@ x = setInterval(function() {
     let step = 1;
     let stepMinutes = [2000, 2000, 1000, 1000];
     let heartbuton = document.getElementById("heart-button");
-    let audio = document.getElementById("hpbd-song");
     let audiofirework = document.getElementById("firework");
     let flower = document.getElementsByClassName("not-loaded")[0];
     let textElement = document.getElementById('animated-text');
@@ -475,7 +476,6 @@ x = setInterval(function() {
       box.addEventListener('click', showheartbutton, false);
 
       heartbuton.addEventListener('click', showcongratulation, false);
-      audio.play();
     }
 
     function stepClass(step) {
