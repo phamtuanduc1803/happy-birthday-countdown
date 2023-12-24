@@ -4,7 +4,7 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'Dec 29, 2023',
+  birthdate: 'Dec 23, 2023',
   name: 'GLENDA'
 };
 
@@ -462,6 +462,7 @@ x = setInterval(function() {
     let stepMinutes = [2000, 2000, 1000, 1000];
     let heartbuton = document.getElementById("heart-button");
     let audio = document.getElementById("hpbd-song");
+    let audiofirework = document.getElementById("firework");
     let flower = document.getElementsByClassName("not-loaded")[0];
     let textElement = document.getElementById('animated-text');
     let textToWrite = 'Chúc mừng sinh nhật :>. Chúc bạn sang tuổi mới luôn, xinh đẹp, vui vẻ, hạnh phúc, tràn đầy năng lượng, tích cực, may mắn và sớm tìm được, nửa còn lại nhé :).';
@@ -470,11 +471,11 @@ x = setInterval(function() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
       box.addEventListener('click', showflower, false);
-      box.addEventListener('click', playaudiohpbd, false);
+      box.addEventListener('click', playaudiofirework, false);
       box.addEventListener('click', showheartbutton, false);
 
       heartbuton.addEventListener('click', showcongratulation, false);
-       
+      audio.play();
     }
 
     function stepClass(step) {
@@ -509,8 +510,8 @@ x = setInterval(function() {
       }, 1000);
     }
 
-    function playaudiohpbd() {
-      audio.play();
+    function playaudiofirework() {
+      audiofirework.play();
     }
 
     function showheartbutton() {
@@ -521,7 +522,7 @@ x = setInterval(function() {
     }
 
     function showcongratulation() {
-      audio.pause();
+      audiofirework.pause();
       flower.style.display= "none";
       canvasC.style.display = 'none';
       heartbuton.style.display = 'none';
