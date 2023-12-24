@@ -4,7 +4,7 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'Dec 29, 2023',
+  birthdate: 'Dec 24, 2023',
   name: 'GLENDA'
 };
 
@@ -48,7 +48,7 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 4,
     opts = {
-      strings: ['HAPPY', 'BIRTHDAY!', config.name, "Be yourself,", "don't be","anyone else"],
+      strings: ['HAPPY', 'BIRTHDAY!', config.name, "Be yourself", "don't be","anyone else"],
       charSize: 24,
       charSpacing: 24,
       lineHeight: 40,
@@ -465,6 +465,7 @@ x = setInterval(function() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
       box.addEventListener('click', showflower, false);
+      box.addEventListener('click', playaudiohpbd, false);
     }
 
     function stepClass(step) {
@@ -497,6 +498,11 @@ x = setInterval(function() {
         document.getElementsByClassName("not-loaded")[0].classList.remove("not-loaded");
         clearTimeout(c);
       }, 1000);
+    }
+
+    function playaudiohpbd() {
+      const audio = document.getElementById("hpbd-song");
+      audio.play();
     }
 
     init();
