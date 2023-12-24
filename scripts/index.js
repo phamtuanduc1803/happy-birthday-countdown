@@ -4,7 +4,7 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'Dec 23, 2023',
+  birthdate: 'Dec 29, 2023',
   name: 'GLENDA'
 };
 
@@ -463,7 +463,6 @@ x = setInterval(function() {
     let heartbuton = document.getElementById("heart-button");
     let audio = document.getElementById("hpbd-song");
     let audiofirework = document.getElementById("firework");
-    let audiotest = document.getElementById("test");
     let flower = document.getElementsByClassName("not-loaded")[0];
     let textElement = document.getElementById('animated-text');
     let textToWrite = 'Chúc mừng sinh nhật :>. Chúc bạn sang tuổi mới luôn, xinh đẹp, vui vẻ, hạnh phúc, tràn đầy năng lượng, tích cực, may mắn và sớm tìm được, nửa còn lại nhé :).';
@@ -513,7 +512,6 @@ x = setInterval(function() {
     function playaudiofirework() {
       audiofirework.play();
       audio.play();
-      audiotest.play();
     }
 
     function showheartbutton() {
