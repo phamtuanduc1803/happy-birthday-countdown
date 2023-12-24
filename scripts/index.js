@@ -461,6 +461,7 @@ x = setInterval(function() {
     let step = 1;
     let stepMinutes = [2000, 2000, 1000, 1000];
     let heartbuton = document.getElementById("heart-button");
+    let audio = document.getElementById("hpbd-song");
     let audiofirework = document.getElementById("firework");
     let flower = document.getElementsByClassName("not-loaded")[0];
     let textElement = document.getElementById('animated-text');
@@ -510,7 +511,7 @@ x = setInterval(function() {
 
     function playaudiofirework() {
       audiofirework.play();
-      document.getElementById("hpbd-song").play();
+      audio.play();
     }
 
     function showheartbutton() {
