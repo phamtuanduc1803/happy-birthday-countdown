@@ -11,11 +11,6 @@ A really simple and elegant looking birthday counter
 &nbsp;
 
 #### installation
-
-```sh
-git clone https://github.com/pavanjadhaw/birthday-counter
-```
-
 &nbsp;
 
 #### usage
