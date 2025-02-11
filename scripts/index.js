@@ -5,7 +5,7 @@ const canvasC = document.getElementById('c');
 
 const config = {
   birthdate: 'Dec 29, 2023',
-  name: 'GLENDA'
+  name: 'Siren'
 };
 
 function hideEverything() {
@@ -48,7 +48,7 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 4,
     opts = {
-      strings: ['HAPPY', 'BIRTHDAY!', config.name, "Be yourself", "don't be","anyone else"],
+      strings: ['Xin chào', 'đồng chí', config.name, "I", "like","you", "!!!"],
       charSize: 24,
       charSpacing: 24,
       lineHeight: 40,
@@ -465,7 +465,7 @@ x = setInterval(function() {
     let audiofirework = document.getElementById("firework");
     let flower = document.getElementsByClassName("not-loaded")[0];
     let textElement = document.getElementById('animated-text');
-    let textToWrite = 'Chúc mừng sinh nhật :>. Chúc bạn sang tuổi mới luôn, xinh đẹp, vui vẻ, hạnh phúc, tràn đầy năng lượng, tích cực, may mắn và sớm tìm được, nửa còn lại nhé :).';
+    let textToWrite = 'Đồng chí thấy cái này thế nào, ngon không :)))';
 
     function init() {
       box.addEventListener('click', openBox, false);
